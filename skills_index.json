@@ -1,0 +1,202 @@
+[
+  {
+    "path": "skills/community/content-research-writer",
+    "name": "content-research-writer",
+    "description": "Assists in writing high-quality content by conducting research, adding citations, improving hooks, iterating on outlines, and providing real-time feedback on each section. Transforms your writing process from solo effort to collaborative partnership."
+  },
+  {
+    "path": "skills/community/document-skills/xlsx",
+    "name": "xlsx",
+    "description": "Comprehensive spreadsheet creation, editing, and analysis with support for formulas, formatting, data analysis, and visualization. When Claude needs to work with spreadsheets (.xlsx, .xlsm, .csv, .tsv, etc) for: (1) Creating new spreadsheets with formulas and formatting, (2) Reading or analyzing data, (3) Modify existing spreadsheets while preserving formulas, (4) Data analysis and visualization in spreadsheets, or (5) Recalculating formulas"
+  },
+  {
+    "path": "skills/community/document-skills/pdf",
+    "name": "pdf",
+    "description": "Comprehensive PDF manipulation toolkit for extracting text and tables, creating new PDFs, merging/splitting documents, and handling forms. When Claude needs to fill in a PDF form or programmatically process, generate, or analyze PDF documents at scale."
+  },
+  {
+    "path": "skills/community/document-skills/pptx",
+    "name": "pptx",
+    "description": "Presentation creation, editing, and analysis. When Claude needs to work with presentations (.pptx files) for: (1) Creating new presentations, (2) Modifying or editing content, (3) Working with layouts, (4) Adding comments or speaker notes, or any other presentation tasks"
+  },
+  {
+    "path": "skills/community/document-skills/docx",
+    "name": "docx",
+    "description": "Comprehensive document creation, editing, and analysis with support for tracked changes, comments, formatting preservation, and text extraction. When Claude needs to work with professional documents (.docx files) for: (1) Creating new documents, (2) Modifying or editing content, (3) Working with tracked changes, (4) Adding comments, or any other document tasks"
+  },
+  {
+    "path": "skills/community/template-skill",
+    "name": "template-skill",
+    "description": "Replace with description of the skill and when Claude should use it."
+  },
+  {
+    "path": "skills/community/video-downloader",
+    "name": "video-downloader",
+    "description": "Downloads videos from YouTube and other platforms for offline viewing, editing, or archival. Handles various formats and quality options."
+  },
+  {
+    "path": "skills/community/theme-factory",
+    "name": "theme-factory",
+    "description": "Toolkit for styling artifacts with a theme. These artifacts can be slides, docs, reportings, HTML landing pages, etc. There are 10 pre-set themes with colors/fonts that you can apply to any artifact that has been creating, or can generate a new theme on-the-fly."
+  },
+  {
+    "path": "skills/community/raffle-winner-picker",
+    "name": "raffle-winner-picker",
+    "description": "Picks random winners from lists, spreadsheets, or Google Sheets for giveaways, raffles, and contests. Ensures fair, unbiased selection with transparency."
+  },
+  {
+    "path": "skills/community/notion-meeting-intelligence",
+    "name": "notion-meeting-intelligence",
+    "description": "Prepares meeting materials by gathering context from Notion, enriching with Claude research, and creating both an internal pre-read and external agenda saved to Notion. Helps you arrive prepared with comprehensive background and structured meeting docs."
+  },
+  {
+    "path": "skills/community/domain-name-brainstormer",
+    "name": "domain-name-brainstormer",
+    "description": "Generates creative domain name ideas for your project and checks availability across multiple TLDs (.com, .io, .dev, .ai, etc.). Saves hours of brainstorming and manual checking."
+  },
+  {
+    "path": "skills/community/image-enhancer",
+    "name": "image-enhancer",
+    "description": "Improves the quality of images, especially screenshots, by enhancing resolution, sharpness, and clarity. Perfect for preparing images for presentations, documentation, or social media posts."
+  },
+  {
+    "path": "skills/community/algorithmic-art",
+    "name": "algorithmic-art",
+    "description": "Creating algorithmic art using p5.js with seeded randomness and interactive parameter exploration. Use this when users request creating art using code, generative art, algorithmic art, flow fields, or particle systems. Create original algorithmic art rather than copying existing artists' work to avoid copyright violations."
+  },
+  {
+    "path": "skills/community/notion-research-documentation",
+    "name": "notion-research-documentation",
+    "description": "Searches across your Notion workspace, synthesizes findings from multiple pages, and creates comprehensive research documentation saved as new Notion pages. Turns scattered information into structured reports with proper citations and actionable insights."
+  },
+  {
+    "path": "skills/community/internal-comms",
+    "name": "internal-comms",
+    "description": "A set of resources to help me write all kinds of internal communications, using the formats that my company likes to use. Claude should use this skill whenever asked to write some sort of internal communications (status reports, leadership updates, 3P updates, company newsletters, FAQs, incident reports, project updates, etc.)."
+  },
+  {
+    "path": "skills/community/skill-creator",
+    "name": "skill-creator",
+    "description": "Guide for creating effective skills. This skill should be used when users want to create a new skill (or update an existing skill) that extends Claude's capabilities with specialized knowledge, workflows, or tool integrations."
+  },
+  {
+    "path": "skills/community/canvas-design",
+    "name": "canvas-design",
+    "description": "Create beautiful visual art in .png and .pdf documents using design philosophy. You should use this skill when the user asks to create a poster, piece of art, design, or other static piece. Create original visual designs, never copying existing artists' work to avoid copyright violations."
+  },
+  {
+    "path": "skills/community/invoice-organizer",
+    "name": "invoice-organizer",
+    "description": "Automatically organizes invoices and receipts for tax preparation by reading messy files, extracting key information, renaming them consistently, and sorting them into logical folders. Turns hours of manual bookkeeping into minutes of automated organization."
+  },
+  {
+    "path": "skills/community/changelog-generator",
+    "name": "changelog-generator",
+    "description": "Automatically creates user-facing changelogs from git commits by analyzing commit history, categorizing changes, and transforming technical commits into clear, customer-friendly release notes. Turns hours of manual changelog writing into minutes of automated generation."
+  },
+  {
+    "path": "skills/community/notion-knowledge-capture",
+    "name": "notion-knowledge-capture",
+    "description": "Transforms conversations and discussions into structured documentation pages in Notion. Captures insights, decisions, and knowledge from chat context, formats appropriately, and saves to wikis or databases with proper organization and linking for easy discovery."
+  },
+  {
+    "path": "skills/community/slack-gif-creator",
+    "name": "slack-gif-creator",
+    "description": "Toolkit for creating animated GIFs optimized for Slack, with validators for size constraints and composable animation primitives. This skill applies when users request animated GIFs or emoji animations for Slack from descriptions like \"make me a GIF for Slack of X doing Y\"."
+  },
+  {
+    "path": "skills/community/artifacts-builder",
+    "name": "artifacts-builder",
+    "description": "Suite of tools for creating elaborate, multi-component claude.ai HTML artifacts using modern frontend web technologies (React, Tailwind CSS, shadcn/ui). Use for complex artifacts requiring state management, routing, or shadcn/ui components - not for simple single-file HTML/JSX artifacts."
+  },
+  {
+    "path": "skills/community/competitive-ads-extractor",
+    "name": "competitive-ads-extractor",
+    "description": "Extracts and analyzes competitors' ads from ad libraries (Facebook, LinkedIn, etc.) to understand what messaging, problems, and creative approaches are working. Helps inspire and improve your own ad campaigns."
+  },
+  {
+    "path": "skills/community/file-organizer",
+    "name": "file-organizer",
+    "description": "Intelligently organizes your files and folders across your computer by understanding context, finding duplicates, suggesting better structures, and automating cleanup tasks. Reduces cognitive load and keeps your digital workspace tidy without manual effort."
+  },
+  {
+    "path": "skills/community/notion-spec-to-implementation",
+    "name": "notion-spec-to-implementation",
+    "description": "Turns product or tech specs into concrete Notion tasks that Claude code can implement. Breaks down spec pages into detailed implementation plans with clear tasks, acceptance criteria, and progress tracking to guide development from requirements to completion."
+  },
+  {
+    "path": "skills/community/webapp-testing",
+    "name": "webapp-testing",
+    "description": "Toolkit for interacting with and testing local web applications using Playwright. Supports verifying frontend functionality, debugging UI behavior, capturing browser screenshots, and viewing browser logs."
+  },
+  {
+    "path": "skills/community/mcp-builder",
+    "name": "mcp-builder",
+    "description": "Guide for creating high-quality MCP (Model Context Protocol) servers that enable LLMs to interact with external services through well-designed tools. Use when building MCP servers to integrate external APIs or services, whether in Python (FastMCP) or Node/TypeScript (MCP SDK)."
+  },
+  {
+    "path": "skills/community/brand-guidelines",
+    "name": "brand-guidelines",
+    "description": "Applies Anthropic's official brand colors and typography to any sort of artifact that may benefit from having Anthropic's look-and-feel. Use it when brand colors or style guidelines, visual formatting, or company design standards apply."
+  },
+  {
+    "path": "skills/community/meeting-insights-analyzer",
+    "name": "meeting-insights-analyzer",
+    "description": "Analyzes meeting transcripts and recordings to uncover behavioral patterns, communication insights, and actionable feedback. Identifies when you avoid conflict, use filler words, dominate conversations, or miss opportunities to listen. Perfect for professionals seeking to improve their communication and leadership skills."
+  },
+  {
+    "path": "skills/community/lead-research-assistant",
+    "name": "lead-research-assistant",
+    "description": "Identifies high-quality leads for your product or service by analyzing your business, searching for target companies, and providing actionable contact strategies. Perfect for sales, business development, and marketing professionals."
+  },
+  {
+    "path": "skills/trading/indian-trading-skills/skills/backtest-expert",
+    "name": "backtest-expert",
+    "description": ">"
+  },
+  {
+    "path": "skills/trading/indian-trading-skills/skills/india-news-tracker",
+    "name": "india-news-tracker",
+    "description": "Track and analyze Indian stock market news, corporate announcements, SEBI circulars, bulk/block deals, and earnings calendars. Auto-fetches headlines from MoneyControl, Economic Times, LiveMint, BSE/NSE filings. Use when the user asks about recent news, corporate actions, upcoming events, or wants a daily market news briefing for NSE/BSE."
+  },
+  {
+    "path": "skills/trading/indian-trading-skills/skills/india-stock-analysis",
+    "name": "india-stock-analysis",
+    "description": "Use when user requests analysis of Indian stocks, fundamental assessment, technical review, comparisons, or investment reports for NSE/BSE listed companies."
+  },
+  {
+    "path": "skills/trading/indian-trading-skills/skills/scenario-analyzer",
+    "name": "scenario-analyzer",
+    "description": "Analyze news headlines, policy announcements, or geopolitical events to build 18-month probabilistic scenarios for Indian markets. Use when the user provides a headline or asks about the market impact of RBI policy, government announcements, global events, budget, or sector-specific news on NSE/BSE stocks."
+  },
+  {
+    "path": "skills/trading/indian-trading-skills/skills/weekly-fno-trade-planner",
+    "name": "weekly-fno-trade-planner",
+    "description": ">"
+  },
+  {
+    "path": "skills/trading/indian-trading-skills/skills/nse-vcp-screener",
+    "name": "nse-vcp-screener",
+    "description": "Screen Nifty 500 stocks for Mark Minervini's Volatility Contraction Pattern (VCP) \u2014 identifying Stage 2 uptrends with tightening price ranges and declining volume before potential breakouts. Use this skill when the user requests VCP screening, Minervini-style setups, Stage 2 breakout candidates, or volatility contraction patterns on NSE/BSE stocks."
+  },
+  {
+    "path": "skills/trading/indian-trading-skills/skills/india-market-breadth",
+    "name": "india-market-breadth",
+    "description": ">"
+  },
+  {
+    "path": "skills/trading/indian-trading-skills/skills/options-strategy-advisor",
+    "name": "options-strategy-advisor",
+    "description": ">"
+  },
+  {
+    "path": "skills/trading/indian-trading-skills/skills/technical-analyst",
+    "name": "technical-analyst",
+    "description": "This skill should be used when analyzing weekly price charts for Indian stocks (NSE/BSE), indices (Nifty 50, Bank Nifty, Sensex), or any other instrument. Use this skill when the user provides chart images and requests technical analysis, trend identification, support/resistance levels, scenario planning, or probability assessments based purely on chart data without consideration of news or fundamental factors."
+  },
+  {
+    "path": "skills/trading/indian-trading-skills/skills/fii-dii-flow-tracker",
+    "name": "fii-dii-flow-tracker",
+    "description": ">"
+  }
+]
