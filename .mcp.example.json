@@ -1,0 +1,79 @@
+{
+  "mcpServers": {
+    "tavily": {
+      "command": "npx",
+      "args": ["-y", "@tavily/mcp"],
+      "env": {
+        "TAVILY_API_KEY": "YOUR_TAVILY_API_KEY_HERE"
+      }
+    },
+    "exa-search": {
+      "command": "npx",
+      "args": ["-y", "exa-mcp-server"],
+      "env": {
+        "EXA_API_KEY": "YOUR_EXA_API_KEY_HERE"
+      }
+    },
+    "github": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-github"],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "YOUR_GITHUB_PAT_HERE"
+      }
+    },
+    "food-mcp": {
+      "command": "node",
+      "args": ["/Users/sujaynimmagadda/Documents/Projects.nosync/Skills/skills/custom-mcps/food-mcp/index.js"]
+    },
+    "prometheus": {
+      "command": "npx",
+      "args": ["-y", "mcp-server-prometheus"],
+      "env": {
+        "PROMETHEUS_URL": "http://localhost:9090"
+      }
+    },
+    "brave-search": {
+      "command": "npx",
+      "args": ["-y", "@brave/brave-search-mcp-server"],
+      "env": {
+        "BRAVE_API_KEY": "YOUR_BRAVE_API_KEY_HERE"
+      }
+    },
+    "google-calendar": {
+      "command": "npx",
+      "args": ["-y", "@cocal/google-calendar-mcp"]
+    },
+    "gmail": {
+      "command": "npx",
+      "args": ["-y", "j3k0/mcp-google-workspace"]
+    },
+    "fetch": {
+      "command": "npx",
+      "args": ["-y", "mcp-server-fetch"]
+    },
+    "memory": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-memory"]
+    },
+    "sequential-thinking": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-sequential-thinking"]
+    },
+    "context7": {
+      "command": "npx",
+      "args": ["-y", "@upstash/context7-mcp"]
+    },
+    "arxiv": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-arxiv"]
+    },
+    "filesystem": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "/Users/sujaynimmagadda/Documents/Projects.nosync"]
+    },
+    "excalidraw": {
+      "command": "npx",
+      "args": ["-y", "@excalidraw/mcp-server"]
+    }
+  }
+}
