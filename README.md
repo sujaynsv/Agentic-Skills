@@ -1,15 +1,108 @@
-# Agentic-Skills
+# Agentic-Skills Workspace
 
-Welcome to the Agentic-Skills repository! This project houses a collection of various AI/LLM-based and trading skills.
+Welcome to the Agentic-Skills repository! This project transforms the Google Antigravity IDE into a fully-autonomous, multi-agent workspace powered by the Model Context Protocol (MCP) and custom BMaD personas.
 
-## Structure
+## Key Features
+- **BMaD Orchestration**: Specialized personas (Analyst, Builder, Ops, Concierge) for distinct workflows.
+- **Custom Slash Commands**: Fast, intent-driven triggers (e.g., `/spec`, `/order`, `/daily`) that automate complex pipelines.
+- **Extensive MCP Integration**: Pre-configured support for 15+ tools including Tavily, GitHub, Exa, Google Calendar, and FileSystem.
+- **Custom Food MCP**: A bespoke, Puppeteer-driven Node.js server that fetches real-time data from Swiggy and Zomato.
 
-- **`skills/community/`**: Imported community skills (from awesome-llm-skills).
-- **`skills/trading/`**: NSE/Qlib/DQN trading skills.
-- **`skills/custom/`**: Personal custom skills I build.
+## Tech Stack
+- **Environment**: Google Antigravity IDE
+- **Agent Architecture**: BMaD (Builder, Manager/Concierge, Analyst, Designer/Ops)
+- **Tooling Standard**: Model Context Protocol (MCP)
+- **Custom MCP Backend**: Node.js, Puppeteer, `@modelcontextprotocol/sdk`
 
-## How to add a new skill
+## Prerequisites
+- **Antigravity IDE**: Installed and configured.
+- **Node.js 20+**: Required to run the custom `food-mcp` server.
+- **API Keys**: Tavily, Exa, Brave Search, and a GitHub Personal Access Token (PAT).
+- **Google Cloud Project**: (Optional) For Gmail and Google Calendar OAuth integration.
 
-1. Create a new folder inside the appropriate category (`skills/community/`, `skills/trading/`, or `skills/custom/`).
-2. Inside that new folder, add a `SKILL.md` file detailing the skill. It should include YAML frontmatter with `name` and `description` (or a first heading for the name).
-3. The `skills_index.json` at the root of the repository tracks all available skills.
+## Getting Started
+
+### 1. Clone the Repository
+```bash
+git clone https://github.com/sujaynsv/Agentic-Skills.git
+cd Agentic-Skills
+```
+
+### 2. Configure MCP Settings
+The environment requires a globally synced `.mcp.json` file. We have provided a secure template.
+```bash
+# Copy the example file to your active config
+cp .mcp.example.json .mcp.json
+```
+Open `.mcp.json` and replace the placeholder keys (`YOUR_TAVILY_API_KEY_HERE`, etc.) with your actual credentials.
+
+### 3. Setup Custom Food MCP
+Our custom Swiggy/Zomato integration requires local Node.js dependencies.
+```bash
+cd skills/custom-mcps/food-mcp
+npm install
+```
+
+### 4. Sync Global Configuration
+For Antigravity to recognize the custom skills and MCPs, you must link the `.mcp.json` to the global Gemini config directory.
+```bash
+ln -sf $(pwd)/.mcp.json ~/.gemini/config/mcp.json
+```
+*Note: Restart your Antigravity IDE after syncing.*
+
+## Architecture
+
+### Directory Structure
+```
+├── .mcp.example.json            # Safe, template MCP configuration
+├── AGENTS.md                    # Core BMaD persona rules and spec-driven mandates
+├── README.md                    # This documentation
+└── skills/
+    ├── custom/                  # Core Agent logic and behaviors
+    │   ├── agent-analyst/       # Research and data gathering persona
+    │   ├── agent-builder/       # Code generation and file manipulation persona
+    │   ├── agent-concierge/     # Life management, food ordering, scheduling persona
+    │   ├── agent-ops/           # Debugging, logging, and metrics persona
+    │   ├── bmad-orchestrator/   # Routing logic for slash commands
+    │   ├── mcp-guide/           # Internal instructions for using MCP tools
+    │   ├── slash-commands/      # Definitions for /spec, /order, /daily, etc.
+    │   └── spec-driven-dev/     # Enforcement of PRD and Tech Spec workflows
+    └── custom-mcps/
+        └── food-mcp/            # Custom Node.js MCP Server for Swiggy/Zomato
+            ├── index.js         # Main server logic and tool definitions
+            ├── package.json     # Node dependencies
+            └── .gitignore
+```
+
+### Request Lifecycle (Example: `/order`)
+1. User types `/order Find me some biryani` in the Antigravity chat.
+2. The `bmad-orchestrator` detects the slash command and routes the request to the `agent-concierge` persona.
+3. The Concierge parses the intent and identifies that it needs external data.
+4. The Concierge calls the `search_swiggy` tool exposed by the local `food-mcp` server over `stdio`.
+5. The `food-mcp` (using Node.js and Puppeteer) processes the request and returns structured restaurant data.
+6. The Concierge synthesizes the data and presents options to the user.
+
+## Environment Variables
+
+### Required
+| Variable | Description |
+|---|---|
+| `TAVILY_API_KEY` | Required for web search capabilities. |
+| `EXA_API_KEY` | Required for deep code/semantic web search. |
+| `GITHUB_PERSONAL_ACCESS_TOKEN` | Required for repo management and PR creation. |
+
+### Optional
+| Variable | Description |
+|---|---|
+| `BRAVE_API_KEY` | Alternative web search engine. |
+| `PROMETHEUS_URL` | Metrics dashboard (defaults to `http://localhost:9090`). |
+
+## Testing Custom Integrations
+
+Since the `food-mcp` supports dynamic location injection, you can test it directly in the IDE by simulating a mobile GPS payload:
+
+```text
+/order Find me some biryani on Swiggy. My current GPS coordinates are Latitude: 17.50, Longitude: 78.46
+```
+
+The Concierge agent will extract the coordinates, feed them into the `food-mcp`, and return geographically accurate restaurant results.
