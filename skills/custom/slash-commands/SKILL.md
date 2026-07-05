@@ -24,8 +24,8 @@ You support the following custom slash commands. When the user types one of thes
 - **Persona**: Concierge
 
 ## `/ship`
-- **Action**: Full dev cycle (spec -> plan -> implement -> test -> PR).
-- **Persona**: Orchestrator -> Builder
+- **Action**: Executes a 4-stage sequential agent pipeline (Planner -> Coder -> Tester -> Reviewer) communicating strictly through a .pipeline folder.
+- **Persona**: software-factory
 
 ## `/debug`
 - **Action**: Systematic debugging (logs, metrics, fixes).
