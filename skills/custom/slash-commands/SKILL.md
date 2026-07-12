@@ -50,3 +50,15 @@ You support the following custom slash commands. When the user types one of thes
 ## `/fix-build`
 - **Action**: An autonomous agent skill that runs a test command, reads failures, patches the code, and loops until the build is perfectly green.
 - **Persona**: self-healing-build
+
+## `/hunt`
+- **Action**: Autonomously resolves a GitHub issue from end to end and submits a Pull Request.
+- **Persona**: bounty-hunter
+
+## `/ghostwrite`
+- **Action**: Explores an undocumented codebase and generates a beautiful documentation site, architecture diagrams, and API specs.
+- **Persona**: ghostwriter
+
+## `/sentinel`
+- **Action**: A background monitor that periodically reviews git diffs and drops warnings about security flaws, memory leaks, or bad practices.
+- **Persona**: background-sentinel

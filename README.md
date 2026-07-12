@@ -74,6 +74,27 @@ ln -sf $(pwd)/.mcp.json ~/.gemini/config/mcp.json
             └── .gitignore
 ```
 
+### Available Slash Commands
+
+- `/spec` : Triggers the Orchestrator to begin Spec-Driven Development.
+- `/plan` : Breaks down a spec into actionable tasks.
+- `/review` : Strict code review against a pre-approved spec.
+- `/order` : Starts the Swiggy/Zomato food ordering flow via the Concierge.
+- `/research` : Deep web search and paper analysis (Analyst).
+- `/ops` : Live metrics, logging, and debugging.
+- `/daily` : Morning briefing (Calendar, Gmail, Weather).
+- `/movie` : Movie lookup and recommendations.
+
+### 🌟 Advanced Autonomous God-Mode Commands
+
+We have added 4 high-autonomy "God-Mode" skills designed to make developers invincible during hackathons or deep work:
+
+- `/ship [feature]` : The **Software Factory**. Spawns a 4-stage pipeline (Planner ➡️ Coder ➡️ Tester ➡️ Reviewer). Passes state strictly via a `.pipeline/` folder and refuses to stop until the Reviewer gives a verdict.
+- `/fix-build [test command]` : The **Self-Healing Build**. Provide a test command (e.g. `/fix-build npm run test`). The agent runs it, debugs the stack trace, patches the code, and loops infinitely until the build is green.
+- `/hunt [issue link]` : The **Bounty Hunter**. Point it at a GitHub issue. It forks the repo, reads the code, writes the feature, adds tests, and autonomously submits a Pull Request.
+- `/ghostwrite` : The **Codebase Ghostwriter**. Drop it in a messy codebase. It explores all files, generates Mermaid architecture diagrams, and writes a pristine documentation suite in a new `docs/` folder.
+- `/sentinel` : The **Background Sentinel**. Use `/schedule` to run this in the background. It periodically reads your uncommitted `git diff` and drops chat alerts *only* if it detects security flaws, memory leaks, or bad practices.
+
 ### Request Lifecycle (Example: `/order`)
 1. User types `/order Find me some biryani` in the Antigravity chat.
 2. The `bmad-orchestrator` detects the slash command and routes the request to the `agent-concierge` persona.
