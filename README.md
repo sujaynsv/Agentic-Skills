@@ -1,10 +1,20 @@
 # Agentic-Skills Workspace
 
+![Autonomy Status](https://img.shields.io/badge/Autonomy-God--Mode-purple)
+![Architecture](https://img.shields.io/badge/Architecture-BMaD-blue)
+![Tools](https://img.shields.io/badge/MCPs-15%2B-green)
+
 Welcome to the Agentic-Skills repository! This project transforms the Google Antigravity IDE into a fully-autonomous, multi-agent workspace powered by the Model Context Protocol (MCP) and custom BMaD personas.
 
+## 📚 Documentation
+- [Architecture & Diagrams](docs/architecture.md)
+- [API & Workflow Specifications](docs/api-specs.md)
+- [Getting Started Guide](docs/getting-started.md)
+
 ## Key Features
+- **God-Mode Autonomy**: Drop-in skills for Self-Healing Builds, Auto-PR Generation, and Ghostwriting.
 - **BMaD Orchestration**: Specialized personas (Analyst, Builder, Ops, Concierge) for distinct workflows.
-- **Custom Slash Commands**: Fast, intent-driven triggers (e.g., `/spec`, `/order`, `/daily`) that automate complex pipelines.
+- **Custom Slash Commands**: Fast, intent-driven triggers (e.g., `/spec`, `/ship`, `/hunt`) that automate complex pipelines.
 - **Extensive MCP Integration**: Pre-configured support for 15+ tools including Tavily, GitHub, Exa, Google Calendar, and FileSystem.
 - **Custom Food MCP**: A bespoke, Puppeteer-driven Node.js server that fetches real-time data from Swiggy and Zomato.
 
