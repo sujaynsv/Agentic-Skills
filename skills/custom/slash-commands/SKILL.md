@@ -46,3 +46,7 @@ You support the following custom slash commands. When the user types one of thes
 ## `/ops`
 - **Action**: Live ops dashboard summary.
 - **Persona**: Ops
+
+## `/fix-build`
+- **Action**: An autonomous agent skill that runs a test command, reads failures, patches the code, and loops until the build is perfectly green.
+- **Persona**: self-healing-build
