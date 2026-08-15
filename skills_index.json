@@ -198,5 +198,10 @@
     "path": "skills/trading/indian-trading-skills/skills/fii-dii-flow-tracker",
     "name": "fii-dii-flow-tracker",
     "description": ">"
+  },
+  {
+    "path": "skills/trading/indian-trading-skills/skills/stock-1min-scorecard",
+    "name": "stock-1min-scorecard",
+    "description": "Use when a user wants a quick stock quality check, 1-minute analysis, scorecard, instant rating, or to screen any stock against fundamental benchmarks — for Indian (NSE/BSE) or global stocks. Fetches live fundamentals and scores 7 key metrics: P/E Ratio, ROIC, D/E Ratio, EPS CAGR (5yr and 3yr), ROE, EBIT Margin, and Gross Margin. Returns a structured pass/fail scorecard with a composite quality grade (Exceptional / High / Moderate / Low / Poor). Triggers on phrases like: '1-min analysis', 'quick check', 'score this stock', 'is X a good stock', 'scorecard for', 'rate this stock', 'quality check'."
   }
 ]
