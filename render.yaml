@@ -1,0 +1,34 @@
+services:
+  # ─── Scorecard Telegram Bot (background worker) ───────────────────────
+  - type: worker
+    name: scorecard-bot
+    runtime: docker
+    dockerfilePath: ./services/scorecard-bot/Dockerfile
+    dockerContext: ./services/scorecard-bot
+    envVars:
+      - key: TELEGRAM_TOKEN
+        sync: false          # Set manually in Render dashboard — never committed
+      - key: ALPHAVANTAGE_API_KEY
+        sync: false          # Set manually in Render dashboard
+
+  # ─── Skills API Gateway (web service) ────────────────────────────────
+  - type: web
+    name: skills-api
+    runtime: docker
+    dockerfilePath: ./services/skills-api/Dockerfile
+    dockerContext: ./services/skills-api
+    plan: free
+    healthCheckPath: /health
+    envVars:
+      - key: ALPHAVANTAGE_API_KEY
+        sync: false
+
+  # ─── Food MCP (background worker) ────────────────────────────────────
+  # Note: Chromium may exceed Render free tier 512MB RAM.
+  # Upgrade to "starter" plan ($7/mo) or move to Railway if OOM errors occur.
+  - type: worker
+    name: food-mcp
+    runtime: docker
+    dockerfilePath: ./services/food-mcp/Dockerfile
+    dockerContext: ./services/food-mcp
+    plan: free

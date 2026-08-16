@@ -1,0 +1,57 @@
+services:
+  # ─── 1. Scorecard Telegram Bot ────────────────────────────────────────
+  scorecard-bot:
+    build:
+      context: ./services/scorecard-bot
+      dockerfile: Dockerfile
+    container_name: scorecard-bot
+    restart: always
+    environment:
+      - TELEGRAM_TOKEN=${TELEGRAM_TOKEN}
+      - ALPHAVANTAGE_API_KEY=${ALPHAVANTAGE_API_KEY}
+    networks:
+      - agentic-net
+
+  # ─── 2. Food MCP (Node.js + Puppeteer/Chromium) ───────────────────────
+  food-mcp:
+    build:
+      context: ./services/food-mcp
+      dockerfile: Dockerfile
+    container_name: food-mcp
+    restart: always
+    ports:
+      - "3001:3001"
+    environment:
+      - PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium
+    # Security: Chromium sandbox flags
+    cap_add:
+      - SYS_ADMIN
+    networks:
+      - agentic-net
+
+  # ─── 3. Skills API Gateway (FastAPI) ──────────────────────────────────
+  skills-api:
+    build:
+      context: ./services/skills-api
+      dockerfile: Dockerfile
+    container_name: skills-api
+    restart: always
+    ports:
+      - "8000:8000"
+    environment:
+      - ALPHAVANTAGE_API_KEY=${ALPHAVANTAGE_API_KEY}
+    volumes:
+      # Mount skills read-only so API can serve SKILL.md files
+      - ./skills:/app/skills:ro
+      - ./skills_index.json:/app/skills_index.json:ro
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    networks:
+      - agentic-net
+
+networks:
+  agentic-net:
+    driver: bridge

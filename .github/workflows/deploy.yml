@@ -1,0 +1,80 @@
+name: Deploy to Render
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  # ─── Lint & validate ──────────────────────────────────────────────────
+  validate:
+    name: Validate
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate skills_index.json
+        run: python3 -c "import json; json.load(open('skills_index.json')); print('✅ skills_index.json is valid JSON')"
+
+      - name: Validate render.yaml exists
+        run: test -f render.yaml && echo "✅ render.yaml found"
+
+      - name: Validate docker-compose.yml
+        env:
+          TELEGRAM_TOKEN: ci-placeholder
+          ALPHAVANTAGE_API_KEY: ci-placeholder
+        run: docker compose config --quiet && echo "✅ docker-compose.yml is valid"
+
+  # ─── Build Docker images (verify they build cleanly) ─────────────────
+  build:
+    name: Build Images
+    runs-on: ubuntu-latest
+    needs: validate
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build scorecard-bot
+        uses: docker/build-push-action@v5
+        with:
+          context: ./services/scorecard-bot
+          push: false
+          tags: scorecard-bot:ci
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+      - name: Build skills-api
+        uses: docker/build-push-action@v5
+        with:
+          context: ./services/skills-api
+          push: false
+          tags: skills-api:ci
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+  # ─── Deploy to Render (on main push only) ────────────────────────────
+  deploy:
+    name: Deploy to Render
+    runs-on: ubuntu-latest
+    needs: build
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    steps:
+      - name: Trigger Render Deploy — scorecard-bot
+        run: |
+          curl -s -X POST "${{ secrets.RENDER_DEPLOY_HOOK_SCORECARD_BOT }}" \
+            -o /dev/null -w "HTTP %{http_code}\n"
+
+      - name: Trigger Render Deploy — skills-api
+        run: |
+          curl -s -X POST "${{ secrets.RENDER_DEPLOY_HOOK_SKILLS_API }}" \
+            -o /dev/null -w "HTTP %{http_code}\n"
+
+      - name: Trigger Render Deploy — food-mcp
+        run: |
+          curl -s -X POST "${{ secrets.RENDER_DEPLOY_HOOK_FOOD_MCP }}" \
+            -o /dev/null -w "HTTP %{http_code}\n"
