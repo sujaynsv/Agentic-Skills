@@ -23,6 +23,9 @@ jobs:
         run: test -f render.yaml && echo "✅ render.yaml found"
 
       - name: Validate docker-compose.yml
+        env:
+          TELEGRAM_TOKEN: ci-placeholder
+          ALPHAVANTAGE_API_KEY: ci-placeholder
         run: docker compose config --quiet && echo "✅ docker-compose.yml is valid"
 
   # ─── Build Docker images (verify they build cleanly) ─────────────────
