@@ -15,7 +15,12 @@ from scorecard_engine import run_scorecard
 load_dotenv()
 
 TELEGRAM_TOKEN = os.getenv("TELEGRAM_TOKEN")
-ALPHA_VANTAGE_KEY = os.getenv("ALPHAVANTAGE_API_KEY", "66TFRARVDRBLXEGS")
+ALPHA_VANTAGE_KEY = os.getenv("ALPHAVANTAGE_API_KEY")
+
+if not TELEGRAM_TOKEN:
+    raise ValueError("TELEGRAM_TOKEN environment variable is not set.")
+if not ALPHA_VANTAGE_KEY:
+    raise ValueError("ALPHAVANTAGE_API_KEY environment variable is not set.")
 
 logging.basicConfig(
     format="%(asctime)s [%(levelname)s] %(message)s",

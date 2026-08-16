@@ -16,7 +16,9 @@ from scorecard_engine import run_scorecard
 
 SKILLS_ROOT = Path(os.getenv("SKILLS_ROOT", "/app/skills"))
 SKILLS_INDEX = Path(os.getenv("SKILLS_INDEX", "/app/skills_index.json"))
-AV_KEY = os.getenv("ALPHAVANTAGE_API_KEY", "66TFRARVDRBLXEGS")
+AV_KEY = os.getenv("ALPHAVANTAGE_API_KEY")
+if not AV_KEY:
+    raise ValueError("ALPHAVANTAGE_API_KEY environment variable is not set.")
 
 app = FastAPI(
     title="Agentic-Skills API",
